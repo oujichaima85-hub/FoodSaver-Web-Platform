@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>FoodSaver – Sauve la Bouffe ! 🥕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.jpg">
+    <link rel="stylesheet" href="./css/extern.css">
+    <link rel="stylesheet" href="./css/funpage.css">
+</head>
+<body>
+    <div class="orb"></div>
+    <input type="checkbox" id="sidebar-toggle">
+    <label class="sidebar-overlay" for="sidebar-toggle" aria-hidden="true"></label>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-logo">
+                <img src="./images/logo.jpg" alt="FoodSaver">
+                <span>FoodSaver</span>
+            </a>
+            <label class="sidebar-close" for="sidebar-toggle" aria-label="Fermer le menu">
+                <span></span><span></span><span></span>
+            </label>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" ><span class="nav-icon">🏠</span>Vitrine</a></li>
+                <li><a href="about.html" ><span class="nav-icon">🌿</span>Qui sommes-nous</a></li>
+                <div class="sidebar-sep"></div>
+                <li><a href="./php/guide.php"><span class="nav-icon">📖</span>Tutoriel culinaire</a></li>
+                <li><a href="./php/recettes.php"><span class="nav-icon">🥘</span>Cuisine savoureuse</a></li>
+                <div class="sidebar-sep"></div>
+                <li><a href="contact.html"><span class="nav-icon">✉️</span>Contactez-nous</a></li>
+                <li><a href="questionnaire.html"><span class="nav-icon">📋</span>Questionnaire</a></li>
+                <li><a href="funpage.html" class="active"><span class="nav-icon">🎮</span>Fun Page</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">© 2026 FoodSaver · Tous droits réservés</div>
+    </aside>
+    <header>
+        <nav class="navbar">
+            <div class="site-name">
+                <img src="./images/logo.jpg" alt="FoodSaver logo">
+                <a href="index.html">FoodSaver</a>
+            </div>
+            <div class="navbar-right">
+                <span class="nav-hint">Menu</span>
+                <label class="hamburger-btn" for="sidebar-toggle" aria-label="Ouvrir le menu">
+                    <span></span><span></span><span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+    <div class="badges-bar">
+        <div class="badge"><span class="badge-icon">🌿</span> Zéro Gaspillage</div>
+        <div class="badge"><span class="badge-icon">🥘</span> Recettes Fraîches</div>
+        <div class="badge"><span class="badge-icon">❄️</span> Conseils de Conservation</div>
+    </div>
+
+    <main>
+        <section class="fun-hero">
+            <h1>🥕 Sauve la Bouffe !</h1>
+            <p>Teste tes connaissances sur la conservation des aliments et lutte contre le gaspillage !</p>
+        </section>
+
+        <!-- ÉCRAN 1 : ACCUEIL -->
+        <div id="ecran-accueil" class="ecran actif">
+            <div class="carte">
+                <div class="accueil-intro">
+                    <span class="big-emoji">🥦</span>
+                    <h2>Comment jouer ?</h2>
+                    <p>Un aliment apparaît — tu dois choisir le <strong>bon endroit pour le conserver</strong> avant que le temps soit écoulé !</p>
+                </div>
+                <div class="regles">
+                    <div class="regle-item">
+                        <span class="ri-emoji">⏱️</span>
+                        <p><strong>15 secondes</strong> par aliment</p>
+                    </div>
+                    <div class="regle-item">
+                        <span class="ri-emoji">❤️</span>
+                        <p><strong>3 vies</strong> — bonne chance !</p>
+                    </div>
+                    <div class="regle-item">
+                        <span class="ri-emoji">⭐</span>
+                        <p><strong>+50 pts</strong> + bonus vitesse</p>
+                    </div>
+                    <div class="regle-item">
+                        <span class="ri-emoji">🔥</span>
+                        <p><strong>Combo ×3</strong> = bonus points</p>
+                    </div>
+                </div>
+                <p id="meilleur-score-accueil" class="best-score-accueil"></p>
+                <button id="btn-commencer" class="btn-principal">🎮 Commencer le jeu</button>
+            </div>
+        </div>
+
+        <!-- ÉCRAN 2 : JEU -->
+        <div id="ecran-jeu" class="ecran">
+            <div class="stats-bar">
+                <span class="stat-chip score-chip">⭐ <span id="score-affiche">0</span></span>
+                <span id="vies-affiche"></span>
+                <span id="streak-affiche"></span>
+                <span class="stat-chip" id="question-num">1 / 18</span>
+            </div>
+            <div class="progress-wrapper">
+                <div id="progress-bar"></div>
+            </div>
+            <div class="timer-wrapper">
+                <span class="timer-label">⏱️ Temps</span>
+                <div class="timer-track"><div id="timer-bar"></div></div>
+                <span id="timer-num">15</span>
+            </div>
+            <div class="carte aliment-card">
+                <span id="emoji-aliment">🥕</span>
+                <div id="nom-aliment">Chargement…</div>
+                <p class="question-label">Où faut-il conserver cet aliment ?</p>
+            </div>
+            <div id="feedback-box" class="feedback-box">
+                <span id="feedback-texte"></span>
+                <span id="feedback-astuce"></span>
+            </div>
+            <div id="zones-container"></div>
+        </div>
+
+        <!-- ÉCRAN 3 : FIN -->
+        <div id="ecran-fin" class="ecran">
+            <div class="carte">
+                <div class="fin-hero">
+                    <span class="trophee">🏆</span>
+                    <h2>Partie terminée !</h2>
+                </div>
+                <div class="scores-fin">
+                    <div class="score-fin-item highlight">
+                        <span class="sf-label">Votre score</span>
+                        <span class="sf-val" id="score-finale">0</span>
+                    </div>
+                    <div class="score-fin-item">
+                        <span class="sf-label">🏅 Record</span>
+                        <span class="sf-val" id="best-score">0</span>
+                    </div>
+                </div>
+                <p id="message-finale"></p>
+                <span id="total-questions"></span>
+                <div class="btns-fin">
+                    <button id="btn-rejouer" class="btn-principal">🔄 Rejouer</button>
+                    <button id="btn-menu"    class="btn-principal secondaire">🏠 Accueil</button>
+                    <a href="./php/guide.php" class="btn-principal secondaire" style="text-align:center;text-decoration:none;">
+                        📖 Voir le Guide de Conservation
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="retour">
+            <a href="index.html">⬅ Retour à la page d'accueil</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">FoodSaver</div>
+            <div class="footer-divider"></div>
+            <div class="footer-contact">
+                <span>📞 +216 12 345 678 &nbsp;|&nbsp; +216 98 765 432</span>
+                <span>✉ <a href="mailto:contact@foodsaver.tn">contact@foodsaver.tn</a></span>
+            </div>
+            <div class="footer-badge">⭐ Certifié Qualité Internationale – ISO 9001</div>
+            <p class="footer-copy">© 2026 FoodSaver. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="./js/funpage.js"></script>
+</body>
+</html>

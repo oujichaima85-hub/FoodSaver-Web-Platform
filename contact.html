@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FoodSaver - Contactez-nous</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.jpg">
+    <link rel="stylesheet" href="./css/extern.css">
+    <link rel="stylesheet" href="./css/contact.css">
+</head>
+
+<body>
+    <div class="orb"></div>
+    <input type="checkbox" id="sidebar-toggle">
+    <label class="sidebar-overlay" for="sidebar-toggle" aria-hidden="true"></label>
+    <!--sidebar-->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-logo">
+                <img src="./images/logo.jpg" alt="FoodSaver">
+                <span>FoodSaver</span>
+            </a>
+            <label class="sidebar-close" for="sidebar-toggle" aria-label="Fermer le menu">
+                <span></span><span></span><span></span>
+            </label>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" ><span class="nav-icon">🏠</span>Vitrine</a></li>
+                <li><a href="about.html" ><span class="nav-icon">🌿</span>Qui sommes-nous</a></li>
+                <div class="sidebar-sep"></div>
+                <li><a href="./php/guide.php"><span class="nav-icon">📖</span>Tutoriel culinaire</a></li>
+                <li><a href="./php/recettes.php"><span class="nav-icon">🥘</span>Cuisine savoureuse</a></li>
+                <div class="sidebar-sep"></div>
+                <li><a href="contact.html" class="active"><span class="nav-icon">✉️</span>Contactez-nous</a></li>
+                <li><a href="questionnaire.html"><span class="nav-icon">📋</span>Questionnaire</a></li>
+                <li><a href="funpage.html"><span class="nav-icon">🎮</span>Fun Page</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">© 2026 FoodSaver · Tous droits réservés</div>
+    </aside>
+
+    <header>
+        <nav class="navbar">
+            <div class="site-name">
+                <img src="./images/logo.jpg" alt="FoodSaver logo">
+                <a href="index.html">FoodSaver</a>
+            </div>
+            <div class="navbar-right">
+                <span class="nav-hint">Menu</span>
+                <label class="hamburger-btn" for="sidebar-toggle" aria-label="Ouvrir le menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+    <div class="badges-bar">
+        <div class="badge"><span class="badge-icon">🌿</span> Zéro Gaspillage</div>
+        <div class="badge"><span class="badge-icon">🥘</span> Recettes Fraîches</div>
+        <div class="badge"><span class="badge-icon">❄️</span> Conseils de Conservation</div>
+    </div>
+
+    <!-- ===== BANNIÈRE ANIMÉE ===== -->
+    <div class="banniere-animee" id="banniereAnimee">
+        <div class="banniere-contenu">
+            <p id="texteBanniere"></p>
+        </div>
+    </div>
+
+    <main>
+
+        <section class="contact-hero">
+            <h1>Contactez l'équipe FoodSaver</h1>
+            <p>
+                Une question, une suggestion ou une proposition de collaboration ?
+                Remplissez le formulaire ci-dessous.
+            </p>
+        </section>
+
+        <!-- ===== GALERIE D'IMAGES AUTOMATIQUE ===== -->
+        <section class="galerie-section">
+            <h2>📸 Galerie de Recettes</h2>
+            <div class="galerie-container">
+                <div class="galerie-image-container">
+                    <img id="galerieImage" src="./images/index.png" alt="Image galerie" class="galerie-image">
+                    <div class="galerie-controls">
+                        <button id="btnPrecedent" class="btn-galerie">⬅️ Précédent</button>
+                        <span id="compteurGalerie" class="compteur-galerie">1 / 5</span>
+                        <button id="btnSuivant" class="btn-galerie">Suivant ➡️</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form">
+
+            <form action="./php/contact.php" method="POST">
+
+                <label for="nom">Nom complet :</label>
+                <input type="text" id="nom" name="nom" required>
+
+                <label for="email">Adresse e-mail :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="sujet">Sujet :</label>
+                <input type="text" id="sujet" name="sujet" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Envoyer</button>
+
+            </form>
+
+        </section>
+
+        <!-- Liens vers questionnaire et fun page -->
+        <section class="liens-section">
+            <h2>📌 Liens Rapides</h2>
+            <div class="liens-container">
+                <a href="questionnaire.html" class="lien-card">
+                    <span class="lien-icon">📋</span>
+                    <span class="lien-text">Répondre au Questionnaire</span>
+                </a>
+                <a href="funpage.html" class="lien-card">
+                    <span class="lien-icon">🎮</span>
+                    <span class="lien-text">Jouer au Jeu Interactif</span>
+                </a>
+            </div>
+        </section>
+
+        <div>
+            <a href="index.html">⬅ Retour à la page d'accueil</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">FoodSaver</div>
+            <div class="footer-divider"></div>
+            <div class="footer-contact">
+                <span>📞 +216 12 345 678 &nbsp;|&nbsp; +216 98 765 432</span>
+                <span>✉ <a href="mailto:contact@foodsaver.tn">contact@foodsaver.tn</a></span>
+            </div>
+            <div class="footer-badge">⭐ Certifié Qualité Internationale – ISO 9001</div>
+            <p class="footer-copy">© 2026 FoodSaver. Tous droits réservés.</p>
+        </div>
+    </footer>
+    
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="js/contact.js"></script>
+    
+    <script>
+        // Script pour le formulaire de contact
+        document.querySelector(".contact-form form").addEventListener("submit", function(e){
+            //e.preventDefault();
+            const oldMessage = this.querySelector(".success-message");
+            if(oldMessage) oldMessage.remove();
+            const success = document.createElement("div");
+            success.className = "success-message";
+            success.textContent = "✅ Message envoyé avec succès ! Merci 🌿";
+            this.appendChild(success);
+            success.style.opacity = "0";
+            success.style.marginTop = "15px";
+            success.style.transition = "all 0.5s";
+            setTimeout(() => { success.style.opacity = "1"; }, 10);
+            //this.reset();
+        });
+    </script>
+</body>
+
+</html>

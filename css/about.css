@@ -1,0 +1,208 @@
+main {
+    padding-top: var(--navbar-height, 80px);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.about-hero {
+    text-align: center;
+    margin: 3rem 0 4rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.about-hero h1 {
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    color: var(--color-primary-dark);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.about-hero h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    border-radius: 2px;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #4f6452;
+    line-height: 1.8;
+}
+
+
+.mission,
+.vision,
+.values,
+.contact-info {
+    background: white;
+    border-radius: 30px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 10px 30px var(--color-shadow);
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.mission {
+    animation-delay: 0.1s;
+}
+
+.vision {
+    animation-delay: 0.2s;
+}
+
+.values {
+    animation-delay: 0.3s;
+}
+
+.contact-info {
+    animation-delay: 0.4s;
+}
+
+.mission:hover,
+.vision:hover,
+.values:hover,
+.contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.186);
+}
+
+.mission h2,
+.vision h2,
+.values h2,
+.contact-info h2 {
+    font-size: 2rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 1.5rem;
+    border-left: 6px solid var(--color-accent);
+    padding-left: 1rem;
+}
+
+.mission p,
+.vision p,
+.contact-info p {
+    font-size: 1.1rem;
+    color: #4a5a4c;
+    line-height: 1.8;
+}
+
+
+.values ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.values li {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+    background: var(--color-secondary);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.values li:hover {
+    background: white;
+    border-color: var(--color-primary-light);
+    transform: scale(1.12);
+    box-shadow: 0 5px 15px var(--color-shadow);
+}
+
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dotted var(--color-accent);
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+.contact-info a:hover {
+    color: var(--color-primary-dark);
+    border-bottom: 1px solid var(--color-primary);
+    transform: translateY(-9px);
+
+}
+
+
+.back-home {
+    text-align: center;
+    margin: 3rem 0;
+    animation: fadeInUp 0.8s 0.5s both;
+}
+
+.back-home a {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--color-secondary);
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 2px solid var(--color-border);
+    transition: all 0.3s;
+}
+
+.back-home a:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    transform: translateX(-5px);
+    box-shadow: 0 5px 15px rgba(58, 123, 68, 0.3);
+}
+
+
+@media (max-width: 768px) {
+
+    .mission,
+    .vision,
+    .values,
+    .contact-info {
+        padding: 1.8rem;
+    }
+}
+
+.values ul {
+    grid-template-columns: 1fr;
+}
+
+.about-hero p {
+    font-size: 1rem;
+}
+
+
+/* Réutilisation des animations définies dans extern.css */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FoodSaver - Questionnaire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.jpg">
+    <link rel="stylesheet" href="./css/extern.css">
+    <link rel="stylesheet" href="./css/questionnaire.css">
+</head>
+
+<body>
+    <div class="orb"></div>
+    <input type="checkbox" id="sidebar-toggle">
+    <label class="sidebar-overlay" for="sidebar-toggle" aria-hidden="true"></label>
+    
+    <!--sidebar-->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-logo">
+                <img src="./images/logo.jpg" alt="FoodSaver">
+                <span>FoodSaver</span>
+            </a>
+            <label class="sidebar-close" for="sidebar-toggle" aria-label="Fermer le menu">
+                <span></span><span></span><span></span>
+            </label>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" ><span class="nav-icon">🏠</span>Vitrine</a></li>
+                <li><a href="about.html" ><span class="nav-icon">🌿</span>Qui sommes-nous</a></li>
+                <div class="sidebar-sep"></div>
+                <li><a href="./php/guide.php"><span class="nav-icon">📖</span>Tutoriel culinaire</a></li>
+                <li><a href="./php/recettes.php"><span class="nav-icon">🥘</span>Cuisine savoureuse</a></li>
+                <div class="sidebar-sep"></div>
+                <li><a href="contact.html"><span class="nav-icon">✉️</span>Contactez-nous</a></li>
+                <li><a href="questionnaire.html" class="active"><span class="nav-icon">📋</span>Questionnaire</a></li>
+                <li><a href="funpage.html"><span class="nav-icon">🎮</span>Fun Page</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">© 2026 FoodSaver · Tous droits réservés</div>
+    </aside>
+
+    <header>
+        <nav class="navbar">
+            <div class="site-name">
+                <img src="./images/logo.jpg" alt="FoodSaver logo">
+                <a href="index.html">FoodSaver</a>
+            </div>
+            <div class="navbar-right">
+                <span class="nav-hint">Menu</span>
+                <label class="hamburger-btn" for="sidebar-toggle" aria-label="Ouvrir le menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+    <div class="badges-bar">
+        <div class="badge"><span class="badge-icon">🌿</span> Zéro Gaspillage</div>
+        <div class="badge"><span class="badge-icon">🥘</span> Recettes Fraîches</div>
+        <div class="badge"><span class="badge-icon">❄️</span> Conseils de Conservation</div>
+    </div>
+
+    <main>
+        <section class="questionnaire-hero">
+            <h1>Questionnaire de Satisfaction</h1>
+            <p>Aidez-nous à améliorer FoodSaver en répondant à ce questionnaire.</p>
+        </section>
+
+        <section class="questionnaire-form">
+            <form id="formulaireQuestionnaire" action="./php/questionnaire.php" method="POST">
+                
+                <!-- CHAMP 1: Nom (Textbox) - VALIDATION 1 -->
+                <div class="form-group">
+                    <label for="nom">👤 Votre nom complet : <span style="color: red;">*</span></label>
+                    <input type="text" id="nom" name="nom" placeholder="Ex: mohamed ali" required>
+                    <span class="error-message" id="erreurNom"></span>
+                </div>
+
+                <!-- CHAMP 2: Email (Email) - VALIDATION 2 -->
+                <div class="form-group">
+                    <label for="email">📧 Adresse e-mail : <span style="color: red;">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    <span class="error-message" id="erreurEmail"></span>
+                </div>
+
+                <!-- CHAMP 3: Satisfaction (Radio buttons) -->
+                <div class="form-group">
+                    <label>⭐ Êtes-vous satisfait de FoodSaver? <span style="color: red;">*</span></label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="satisfaction" value="très-satisfait" required>
+                            Très satisfait
+                        </label>
+                        <label>
+                            <input type="radio" name="satisfaction" value="satisfait" required>
+                            Satisfait
+                        </label>
+                        <label>
+                            <input type="radio" name="satisfaction" value="neutre" required>
+                            Neutre
+                        </label>
+                        <label>
+                            <input type="radio" name="satisfaction" value="insatisfait" required>
+                            Peu satisfait
+                        </label>
+                    </div>
+                </div>
+
+                <!-- CHAMP 4: Intérêts (Checkboxes) - VALIDATION 3 -->
+                <div class="form-group">
+                    <label>✨ Quelles fonctionnalités vous intéressent? <span style="color: red;">*</span></label>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="fonctionnalites[]" value="recettes">
+                            Les recettes
+                        </label>
+                        <label>
+                            <input type="checkbox" name="fonctionnalites[]" value="conservation">
+                            Les conseils de conservation
+                        </label>
+                        <label>
+                            <input type="checkbox" name="fonctionnalites[]" value="astuces">
+                            Les astuces anti-gaspillage
+                        </label>
+                        <label>
+                            <input type="checkbox" name="fonctionnalites[]" value="communaute">
+                            La communauté
+                        </label>
+                    </div>
+                    <span class="error-message" id="erreurFonctionnalites"></span>
+                </div>
+
+                <!-- CHAMP 5: Commentaires (Textarea) -->
+                <div class="form-group">
+                    <label for="commentaires">💭 Vos commentaires et suggestions :</label>
+                    <textarea id="commentaires" name="commentaires" rows="5" placeholder="Partagez vos idées..."></textarea>
+                </div>
+
+                <!-- CHAMP 6: Source de visite (Select) -->
+                <div class="form-group">
+                    <label for="source">🔍 Comment avez-vous découvert FoodSaver? <span style="color: red;">*</span></label>
+                    <select id="source" name="source" required>
+                        <option value="">-- Sélectionnez une option --</option>
+                        <option value="moteur-recherche">Moteur de recherche</option>
+                        <option value="reseaux-sociaux">Réseaux sociaux</option>
+                        <option value="ami">Recommandation d'un ami</option>
+                        <option value="publicite">Publicité</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <!-- Messages d'erreur/succès -->
+                <div id="messageFormulaire"></div>
+
+                <!-- Bouton de soumission -->
+                <button type="submit" class="btn-submit">📤 Soumettre le questionnaire</button>
+
+            </form>
+        </section>
+
+        <div class="retour">
+            <a href="index.html">⬅ Retour à la page d'accueil</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">FoodSaver</div>
+            <div class="footer-divider"></div>
+            <div class="footer-contact">
+                <span>📞 +216 12 345 678 &nbsp;|&nbsp; +216 98 765 432</span>
+                <span>✉ <a href="mailto:contact@foodsaver.tn">contact@foodsaver.tn</a></span>
+            </div>
+            <div class="footer-badge">⭐ Certifié Qualité Internationale – ISO 9001</div>
+            <p class="footer-copy">© 2026 FoodSaver. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Lien vers le fichier JavaScript de validation -->
+    <script src="./js/questionnaire.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FoodSaver - Accueil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.jpg">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/extern.css">
+
+
+</head>
+
+<body>
+    <!--ça est meme pour toutes les pages-->
+    <div class="orb"></div>
+    <input type="checkbox" id="sidebar-toggle">
+    <label class="sidebar-overlay" for="sidebar-toggle" aria-hidden="true"></label>
+    <!--sidebar-->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-logo">
+                <img src="./images/logo.jpg" alt="FoodSaver">
+                <span>FoodSaver</span>
+            </a>
+            <label class="sidebar-close" for="sidebar-toggle" aria-label="Fermer le menu">
+                <span></span><span></span><span></span>
+            </label>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" class="active"><span class="nav-icon">🏠</span>Vitrine</a></li>
+                <li><a href="about.html" ><span class="nav-icon">🌿</span>Qui sommes-nous</a></li>
+                <div class="sidebar-sep"></div>
+                <li><a href="./php/guide.php"><span class="nav-icon">📖</span>Tutoriel culinaire</a></li>
+                <li><a href="./php/recettes.php"><span class="nav-icon">🥘</span>Cuisine savoureuse</a></li>
+                <div class="sidebar-sep"></div>
+                <li><a href="contact.html"><span class="nav-icon">✉️</span>Contactez-nous</a></li>
+                <li><a href="questionnaire.html"><span class="nav-icon">📋</span>Questionnaire</a></li>
+                <li><a href="funpage.html"><span class="nav-icon">🎮</span>Fun Page</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">© 2026 FoodSaver · Tous droits réservés</div>
+    </aside>
+
+    <header>
+        <nav class="navbar">
+            <div class="site-name">
+                <img src="./images/logo.jpg" alt="FoodSaver logo">
+                <a href="index.html">FoodSaver</a>
+            </div>
+            <div class="navbar-right">
+                <span class="nav-hint">Menu</span>
+                <label class="hamburger-btn" for="sidebar-toggle" aria-label="Ouvrir le menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+    <div class="badges-bar">
+        <div class="badge"><span class="badge-icon">🌿</span> Zéro Gaspillage</div>
+        <div class="badge"><span class="badge-icon">🥘</span> Recettes Fraîches</div>
+        <div class="badge"><span class="badge-icon">❄️</span> Conseils de Conservation</div>
+    </div>
+    <!--fin de la partie commune-->
+
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-tag">Cuisine durable &amp; savoureuse</div>
+
+            <h1>
+                Préservez la fraîcheur,<br>
+                savourez vos recettes<br>
+                <em>plus longtemps.</em>
+            </h1>
+
+            <p>
+                Découvrez nos plats délicieux, accompagnés de conseils pratiques pour
+                conserver vos ingrédients, éviter le gaspillage et savourer chaque
+                bouchée au quotidien.
+            </p>
+
+            <div class="hero-actions">
+                <a href="./php/recettes.php" class="btn-primary">
+                    <span>Découvrir les recettes</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="./php/guide.php" class="btn-secondary">
+                    <span>Guide de conservation</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Recettes</span>
+                </div>
+                <div class="stat-separator"></div>
+                <div class="stat">
+                    <span class="stat-number">50K</span>
+                    <span class="stat-label">Utilisateurs satisfaits</span>
+                </div>
+                <div class="stat-separator"></div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Conseils de conservation</span>
+                </div>
+                <div class="stat-separator"></div>
+                <div class="stat">
+                    <span class="stat-number">ISO</span>
+                    <span class="stat-label">Certifié 9001</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="hero-image">
+            <img src="./images/index.png" alt="Cuisine & Anti-Gaspillage – Recette du Jour">
+            <div class="img-badge">Recette du jour</div>
+        </div>
+
+    </main>
+    <!--for the cards-->
+    <section class="features">
+        <div class="feature-card">
+            <span class="feature-icon">🥗</span>
+            <div class="feature-title">Recettes Anti-Gaspillage</div>
+            <p class="feature-desc">
+                Transformez vos restes en plats savoureux — gratins, soupes,
+                salades créatives et bien plus encore.
+            </p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">🧊</span>
+            <div class="feature-title">Conseils de Conservation</div>
+            <p class="feature-desc">
+                Réfrigérateur, congélateur ou bocaux hermétiques — nos astuces
+                pour garder vos aliments frais plus longtemps.
+            </p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">🍋</span>
+            <div class="feature-title">Cuisinez les Épluchures</div>
+            <p class="feature-desc">
+                Bouillons maison, chips de légumes, smoothies aux fruits trop
+                mûrs — rien ne se jette !
+            </p>
+        </div>
+    </section>
+
+
+
+    <!--footer commun pour toutes les pages-->
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">FoodSaver</div>
+            <div class="footer-divider"></div>
+            <div class="footer-contact">
+                <span>📞 +216 12 345 678 &nbsp;|&nbsp; +216 98 765 432</span>
+                <span>✉ <a href="mailto:contact@foodsaver.tn">contact@foodsaver.tn</a></span>
+            </div>
+            <div class="footer-badge">⭐ Certifié Qualité Internationale – ISO 9001</div>
+            <p class="footer-copy">© 2026 FoodSaver. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
